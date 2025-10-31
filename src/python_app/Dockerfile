@@ -1,14 +1,13 @@
 FROM python:3.12
 
-# Set working directory in the container
 WORKDIR /app
 
-# Copy requirements and install
-COPY requirements.txt .
+COPY src/python_app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy your script into the container
-COPY titanic_model.py .
+COPY src/python_app/titanic_model.py .
 
-# Command to run your script
+# Copy data folder from one level up (src/data → /app/data)
+COPY src/data ./data
+
 CMD ["python", "titanic_model.py"]
