@@ -1,8 +1,9 @@
 print("Hello Titanic!")
 import pandas as pd
+import os
 
 # Load Titanic training data
-data_path = '../data/train.csv'  # because run.py is in src/python_app
+data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'train.csv')
 df = pd.read_csv(data_path)
 
 # Quick look at the data
