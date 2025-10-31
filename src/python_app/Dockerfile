@@ -1,13 +1,17 @@
-FROM python:3.11-slim
+# Use a lightweight official Python image
+FROM python:3.12
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy requirements.txt and install dependencies
-COPY requirements.txt .
+# Copy requirements.txt from the root of your project
+COPY ../../requirements.txt .
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy your src folder
-COPY src/ src/
+# Copy your source code into the container
+COPY . .
 
-# Default command to run your script
-CMD ["python", "src/python_app/run.py"]
+# Command to run your script
+CMD ["python", "run.py"]
