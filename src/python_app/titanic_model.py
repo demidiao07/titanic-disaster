@@ -63,8 +63,8 @@ print("Loading test dataset...")
 test_df = pd.read_csv("data/test.csv")
 
 # Fill missing values in test set
-test_df["Age"].fillna(df["Age"].median(), inplace=True)
-test_df["Fare"].fillna(df["Fare"].median(), inplace=True)
+test_df["Age"] = test_df["Age"].fillna(df["Age"].median())
+test_df["Fare"] = test_df["Fare"].fillna(df["Fare"].median())
 
 # Encode categorical variables in test data
 test_df["Sex"] = test_df["Sex"].map({"male": 0, "female": 1})
