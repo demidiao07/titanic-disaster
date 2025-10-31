@@ -1,23 +1,28 @@
-# Ignore data folder
-src/data/
+# ---- OS files ----
+.DS_Store
+Thumbs.db
 
-# Ignore virtual environments
-venv/
-.env/
-
-# Ignore compiled Python files
+# ---- Python ----
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Ignore macOS system files
-.DS_Store
-data/
+# ---- Virtual environments ----
+venv/
+.env/
+.venv/
 
-# Ignore Jupyter Notebook checkpoints
+# ---- Data files (required by assignment: DO NOT COMMIT DATA) ----
+src/data/
+
+# ---- Logs / temporary files ----
+*.log
+*.tmp
+
+# ---- Jupyter / notebooks ----
 .ipynb_checkpoints/
 
-# Ignore model files (if you save them later)
-*.pkl
-
-# Ignore Docker files cache
-*.log
+# ---- Docker ----
+*.pid
+*.tar
