@@ -1,22 +1,12 @@
-# Ignore data folder
-src/data/
-
-# Ignore virtual environments
-venv/
-.env/
-
-# Ignore compiled Python files
-__pycache__/
-*.pyc
-
-# Ignore macOS system files
+# macOS
 .DS_Store
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# virtual environment
+venv/
 
-# Ignore model files (if you save them later)
-*.pkl
+# data folder
+src/data/
 
-# Ignore Docker files cache
-*.log
+# python cache
+__pycache__/
+
