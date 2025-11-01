@@ -1,14 +1,16 @@
-# Use the R image that includes tidyverse preinstalled
-FROM --platform=linux/amd64 rocker/tidyverse:4.3.2
+FROM r-base:4.3.2
 
-# Set working directory
 WORKDIR /app
 
-# Copy your R scripts into the container
-COPY . .
+# Install caret only (optional)
+RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev libssl-dev libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install caret (tidyverse already included)
-RUN Rscript -e "install.packages('caret', repos='https://cloud.r-project.org')"
+RUN R -e "install.packages('caret', repos='https://cloud.r-project.org')"
 
-# Run your Titanic R script
-CMD ["Rscript", "run.R"]
+COPY src/r_app/titanic_model.R .
+COPY src/data ./data
+
+CMD ["Rscript", "titanic_model.R"]
+

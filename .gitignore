@@ -13,8 +13,13 @@ venv/
 .env/
 .venv/
 
-# ---- Data files (required by assignment: DO NOT COMMIT DATA) ----
+# ---- Data folder (exclude datasets) ----
 src/data/
+
+# ---- R environment or history files ----
+.Rhistory
+.RData
+.Rproj.user/
 
 # ---- Logs / temporary files ----
 *.log
