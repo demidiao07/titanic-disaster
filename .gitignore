@@ -1,16 +1,33 @@
-# ---- macOS system files ----
+# ---- OS files ----
 .DS_Store
+Thumbs.db
 
-# ---- Python virtual environments ----
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---- Virtual environments ----
 venv/
+.env/
+.venv/
 
 # ---- Data folder (exclude datasets) ----
 src/data/
-
-# ---- Python cache files ----
-__pycache__/
 
 # ---- R environment or history files ----
 .Rhistory
 .RData
 .Rproj.user/
+
+# ---- Logs / temporary files ----
+*.log
+*.tmp
+
+# ---- Jupyter / notebooks ----
+.ipynb_checkpoints/
+
+# ---- Docker ----
+*.pid
+*.tar

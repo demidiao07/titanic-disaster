@@ -13,3 +13,4 @@ COPY src/r_app/titanic_model.R .
 COPY src/data ./data
 
 CMD ["Rscript", "titanic_model.R"]
+
