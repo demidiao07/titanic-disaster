@@ -1,11 +1,16 @@
-# macOS
+# ---- macOS system files ----
 .DS_Store
 
-# virtual environments
+# ---- Python virtual environments ----
 venv/
 
-# data folder
+# ---- Data folder (exclude datasets) ----
 src/data/
 
-# python cache
+# ---- Python cache files ----
 __pycache__/
+
+# ---- R environment or history files ----
+.Rhistory
+.RData
+.Rproj.user/
